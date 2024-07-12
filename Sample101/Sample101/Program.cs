@@ -10,12 +10,11 @@ namespace Sample601
     {
         static void Main(string[] args)
         {
-            Calc c = new Calc();
-            double a = 4.1, b = 2.3;
-            Console.WriteLine(a + " + " + b + " = " + c.Add(a, b));
-            Console.WriteLine(a + " - " + b + " = " + c.Sub(a, b));
-            Console.WriteLine(a + " * " + b + " = " + c.Mul(a, b));
-            Console.WriteLine(a + " / " + b + " = " + c.Div(a, b));
+            Circle c = new Circle();
+            //  円の半径を設定
+            c.r = 4.0;
+            Console.WriteLine("半径" + c.r + "の円の円周の長さは" + c.Circumference());
+            Console.WriteLine("半径" + c.r + "の円の面積の長さは" + c.Area());
         }
     }
 }
