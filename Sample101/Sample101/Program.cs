@@ -10,12 +10,11 @@ namespace Sample601
     {
         static void Main(string[] args)
         {
-            TwoStrings s = new TwoStrings();
-            s.String1 = "Hello";
-            s.String2 = "World";
-            Console.WriteLine("一つ目の文字列は" + s.String1);
-            Console.WriteLine("二つ目の文字列は" + s.String2);
-            Console.WriteLine("二つの文字列を合成したものは" + s.GetConnectedString());
+            Sample s = new Sample();
+            Person p2;
+            p2 = new Person("太田隆", 29);
+            s.foo();
+
         }
     }
 }
