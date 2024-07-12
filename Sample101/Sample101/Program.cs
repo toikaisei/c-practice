@@ -10,11 +10,12 @@ namespace Sample601
     {
         static void Main(string[] args)
         {
-            Data d = new Data();
-            d.Number = 100;
-            d.Comment = "Programming C#";
-            Console.WriteLine("number = " + d.Number);
-            Console.WriteLine("comment = " + d.Comment);
+            TwoStrings s = new TwoStrings();
+            s.String1 = "Hello";
+            s.String2 = "World";
+            Console.WriteLine("一つ目の文字列は" + s.String1);
+            Console.WriteLine("二つ目の文字列は" + s.String2);
+            Console.WriteLine("二つの文字列を合成したものは" + s.GetConnectedString());
         }
     }
 }
