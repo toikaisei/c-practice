@@ -13,12 +13,10 @@ namespace Sample601
         {
            
         }
-        public static void Add(int a, int b)
+        public static int Mul(int a, int b, int c)
         {
-             Console.WriteLine("{0} + {1} = {2}",a, b,  a + b);
+            return a * b * c;
         }
-        public static void Sub(int a, int b) {
-             Console.WriteLine("{0} - {1} = {2}", a, b, a - b);
-        }
+       
     }
 }
