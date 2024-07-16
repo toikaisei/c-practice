@@ -8,13 +8,17 @@ namespace Sample601
 {
     class Sample
     {
-
-        public Sample() {
-            Console.WriteLine("コンストラクタ");
-        }
-        public void foo()
+        public Sample()
         {
-            Console.WriteLine("foo");
+            Console.WriteLine("スタート");
         }
+         ~Sample() {
+            Console.WriteLine("エンド");
+        }
+        public void func()
+        {
+            Console.WriteLine("func");
+        }
+        
     }
 }
