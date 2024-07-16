@@ -10,9 +10,13 @@ namespace Sample601
     {
         static void Main(string[] args)
         {
-            Sample s = new Sample();
-            s.func();
-
+            //  キーボードから整数の値を入力
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            int b = int.Parse(Console.ReadLine());
+            Programs.Add(a, b);
+            Programs.Sub(a, b);
         }
     }
 }
