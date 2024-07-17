@@ -8,32 +8,25 @@ namespace Sample601
 {
     class Calc
     {
-        //  一つ目の数
-        private int num1;
-        //  二つ目の数
-        private int num2;
+        public Calc() {
 
-        public Calc(int num1, int num2) {
-            this.num1 = num1;
-            this.num2 = num2;
         }
-        public Calc() { }
-
-        //  一つ目の数のプロパティ
-        public int Num1
-        {
-            set { num1 = value; }
-            get { return num1; }
-        }
-        //  二つ目の数のプロパティ
-        public int Num2
-        {
-            set { num2 = value; }
-            get { return num2; }
-        }
-        public void ShowAdd()
-        {
-            Console.WriteLine("{0} + {1} = {2}", num1, num2, num1 + num2);
+        //静的メソッドSquare生成、引数に整数の値×2（縦、横の値）
+        public static void Square(int lengthNum, int sideNum) {
+            Random r = new Random();
+            //1から10の、2つの乱数を発生させる
+            lengthNum = r.Next(1, 11);
+            sideNum = r.Next(1, 11);
+            //縦、横の値を出力
+            Console.WriteLine("縦:" + lengthNum);
+            Console.WriteLine("横:" + sideNum);
+            //処理内容(縦、横に指定された数の■マークを表示する。ただし、どちらかの値が0以下の場合は、何も表示しない)
+            for (int i = 1; i <= lengthNum; i++) {
+                for (int j = 1; j <= sideNum; j++) {
+                    Console.Write("■");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
