@@ -10,16 +10,12 @@ namespace Sample601
     {
         static void Main(string[] args)
         {
-            Animal[] animals = new Animal[2];
-            animals[0] = new Dog();     //  犬クラスのインスタンス生成
-            animals[1] = new Monkey();  // 猿クラスのインスタンスの生成
-            for (int i = 0; i < animals.Length; i++)
-            {
-                animals[i].ShowName();
-                animals[i].Move();
-                animals[i].Bark();
-                Console.WriteLine("------------");
-            }
+            //  四角形の生成
+            Box b = new Box(2.0, 4.0);
+            //  三角形の生成
+            Triangle t = new Triangle(4.0, 1.5);
+            Console.WriteLine("幅{0}、高さ{1}の四角形の面積は{2}", b.Width, b.Height, b.Area);
+            Console.WriteLine("幅{0}、高さ{1}の三角形の面積は{2}", t.Width, t.Height, t.Area);        
         }
-    }
+    }    
 }
