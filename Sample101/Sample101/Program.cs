@@ -10,12 +10,28 @@ namespace Sample601
     {
         static void Main(string[] args)
         {
-            //  四角形の生成
-            Box b = new Box(2.0, 4.0);
-            //  三角形の生成
-            Triangle t = new Triangle(4.0, 1.5);
-            Console.WriteLine("幅{0}、高さ{1}の四角形の面積は{2}", b.Width, b.Height, b.Area);
-            Console.WriteLine("幅{0}、高さ{1}の三角形の面積は{2}", t.Width, t.Height, t.Area);        
+            CellPhone cp = new CellPhone();
+            FuncPhone(cp);
+            FuncMailer(cp);
+            FuncComputer(cp);
+        }
+        //  電話としての処理
+        public static void FuncPhone(IPhone phone)
+        {
+            phone.CallPhone();      //  電話を掛ける
+            phone.RecievePhone();   //  電話を受ける
+        }
+        //  メーラーとしての処理
+        public static void FuncMailer(IEmail mailer)
+        {
+            mailer.SendMail();      //  メールを送信する
+            mailer.RecieveMail();   //  メールを受信する
+        }
+        //  コンピュータとしての処理
+        public static void FuncComputer(IComputer computer)
+        {
+            computer.PlayGame();    //  ゲームをする
+            computer.BrowseWeb();   //  ウェブを閲覧する
         }
     }    
 }
