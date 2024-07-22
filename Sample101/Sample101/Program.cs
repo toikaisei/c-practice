@@ -10,28 +10,24 @@ namespace Sample601
     {
         static void Main(string[] args)
         {
-            CellPhone cp = new CellPhone();
-            FuncPhone(cp);
-            FuncMailer(cp);
-            FuncComputer(cp);
+            AlarmClock ac = new AlarmClock();   //  アラーム付き時計クラスのインスタンスを生成
+            IAlarm ar = (IAlarm)ac;
+            IClock cl = (IClock)ac;
+            FuncAlarm(ar);
+            FuncClock(cl);
         }
-        //  電話としての処理
-        public static void FuncPhone(IPhone phone)
+        //  アラームとしての処理
+        public static void FuncAlarm(IAlarm alarm)
         {
-            phone.CallPhone();      //  電話を掛ける
-            phone.RecievePhone();   //  電話を受ける
+            alarm.SetAlarm();   //  アラームのセット
+            alarm.Alarm();      //  アラームを鳴らす
+            alarm.StopAlarm();  //  アラームを止める
         }
-        //  メーラーとしての処理
-        public static void FuncMailer(IEmail mailer)
+        //  時計としての処理
+        public static void FuncClock(IClock clock)
         {
-            mailer.SendMail();      //  メールを送信する
-            mailer.RecieveMail();   //  メールを受信する
-        }
-        //  コンピュータとしての処理
-        public static void FuncComputer(IComputer computer)
-        {
-            computer.PlayGame();    //  ゲームをする
-            computer.BrowseWeb();   //  ウェブを閲覧する
+            clock.AdjustTime(); //  時間を調整する
+            clock.ShowTime();   //  時間を表示する
         }
     }    
 }
