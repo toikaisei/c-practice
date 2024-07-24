@@ -6,24 +6,48 @@ using System.Threading.Tasks;
 
 namespace Sample601
 {
+    //  デリゲート
+    delegate void Delegatefunc(int num);
+    class Showcharas
+    {
+        //  星を表示
+        public void ShowStars(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                Console.Write("☆");
+            }
+            Console.WriteLine();
+        }
+        //  資格を表示
+        public void ShowBoxes(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                Console.Write("■");
+            }
+            Console.WriteLine();
+        }
+        //  +を表示
+        public void ShowPlus(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                Console.Write("＋");
+            }
+            Console.WriteLine();
+        }
+    }
     class Program
     {
-        //  デリゲート
-        delegate void Delfunc();
-        static void Func1()
-        {
-            Console.WriteLine("Func1");
-        }
-        static void Func2()
-        {
-            Console.WriteLine("Func2");
-        }
         static void Main(string[] args)
         {
-            Delfunc df = new Delfunc(Func1);
-            Delfunc df2 = new Delfunc(Func2);
-            df2();
-        }
+            Showcharas s = new Showcharas();
+            Delegatefunc f = new Delegatefunc(s.ShowStars);
+            f += new Delegatefunc(s.ShowBoxes);
+            f += new Delegatefunc(s.ShowPlus);
+            f(4);
 
-    }    
+        }
+    }
 }
